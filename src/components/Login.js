@@ -9,6 +9,7 @@ import {
 } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/Redux/userSlice";
+import { BACKGROUND_IMG, USER_ICON } from "./constants/constants";
 
 const Login = () => {
   const [isSignInForm, setSignInForm] = useState(true);
@@ -47,8 +48,7 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL:
-              "https://st3.depositphotos.com/15648834/17930/v/450/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg",
+            photoURL: USER_ICON,
           })
             .then(() => {
               const { uid, email, displayName, photoURL } = auth.currentUser;
@@ -100,10 +100,7 @@ const Login = () => {
     <div>
       <Header />
       <div className="absolute">
-        <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/ab4b0b22-2ddf-4d48-ae88-c201ae0267e2/0efe6360-4f6d-4b10-beb6-81e0762cfe81/IN-en-20231030-popsignuptwoweeks-perspective_alpha_website_medium.jpg"
-          alt=""
-        />
+        <img src={BACKGROUND_IMG} alt="Logo" />
       </div>
       <form
         onSubmit={(e) => e.preventDefault()}
