@@ -64,7 +64,8 @@ const Header = () => {
   };
 
   return (
-    <div className="w-screen absolute px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between">
+    <div className="w-screen absolute  px-8 py-2 z-10 flex justify-between">
+      {/* Updated className here */}
       <img className="w-40" src={LOGO} alt="logo" />
       {user && (
         <div className="flex p-2">
@@ -84,7 +85,7 @@ const Header = () => {
             className="py-2 my-2 px-4 m-2 bg-purple-800 text-white rounded-lg"
             onClick={handleGptSearchClick}
           >
-            {showGptSearch? "Home":"GPT Search"}
+            {showGptSearch ? "Home" : "GPT Search"}
           </button>
           <img className="w-12 h-12" src={user.photoURL} alt="user_icon" />
           <button className="font-bold text-white p-2" onClick={handleSignOut}>
@@ -95,5 +96,4 @@ const Header = () => {
     </div>
   );
 };
-
 export default Header;
